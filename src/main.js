@@ -1,3 +1,5 @@
+window._ = require('lodash');
+
 import Vue from 'vue'
 import App from './App.vue'
 import Router from './Router'

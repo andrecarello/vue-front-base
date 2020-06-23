@@ -12,7 +12,7 @@ export const CLIENT_EMAIL_SUPPORT = "";
 
 export default {
   title: (page = '') => {
-    document.title = `${PROJECT_NAME} | ${page}`
+    document.title = `${page} | ${PROJECT_NAME}`
   },
   anonymous: () => {
     if ( !localStorage.getItem(ANONYMOUS) ) return Anonymous.init();

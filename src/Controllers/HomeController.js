@@ -1,6 +1,6 @@
 import Controller from "./Controller";
 
-import Home from "../Views/Home";
+import Home from "../resources/Views/Home";
 
 class HomeController extends Controller{
 
