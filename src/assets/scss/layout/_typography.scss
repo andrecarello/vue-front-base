@@ -1,0 +1,11 @@
+//
+// Author: André Carello <andrelino.cl@gmail.com>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: typography.scss
+// Location: scss/layout
+//
+
+.heading-1 {
+	@include fluid-type(30px, 45px);
+}

@@ -1,0 +1,20 @@
+//
+// Author: André Carello <andrelino.cl@gmail.com>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: display.scss
+// Location: scss/layout
+//
+
+@mixin display($type, $v: '', $h: '') {
+	display: $type;
+
+	@if $type = 'flex' {
+		@if $v != '' {
+			justify-content: $v;
+		}
+		@if $h != '' {
+			align-items: $h;
+		}
+	}
+}

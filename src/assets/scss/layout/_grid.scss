@@ -1,0 +1,38 @@
+//
+// Author: André Carello <andrelino.cl@gmail.com>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: grid.scss
+// Location: scss/layout
+//
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+
+	@each $breakpoint_name, $breakpoint_size in $breakpoints {
+		@include media( $breakpoint_name ) {
+			max-width: $breakpoint_size - (15px * 2);
+		}
+	}
+
+	&.fluid {
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+.grid {
+	display: flex;
+	justify-content: flex-start;
+	align-items: stretch;
+	flex-wrap: wrap;
+
+	@for $i from 1 through 12 {
+		&[columns="#{$i}"] {
+			> * {
+				width: (100% / $i);
+			}
+		}
+	}
+}

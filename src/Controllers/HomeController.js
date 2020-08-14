@@ -1,9 +1,10 @@
-import Controller from "./Controller";
+// -> import default controller
+import Controller from './Controller';
 
-import Home from "../resources/Views/Home";
+class HomeController extends Controller {
+	static view() {
+		return () => import(/* webpackChunkName: "home" */ '../views/Home/index.vue');
+	}
+}
 
-class HomeController extends Controller{
-
-  static index () { return Home }
-
-} export default HomeController;
+export default HomeController;

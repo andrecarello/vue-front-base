@@ -1,0 +1,30 @@
+//
+// Author: André Carello <andrelino.cl@gmail.com>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: helpers.scss
+// Location: scss/core
+//
+
+.cols {
+	&[size="2"] {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		max-width: 320px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+
+		> * {
+			width: calc(100% / 2 - 17px);
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+		}
+	}
+}

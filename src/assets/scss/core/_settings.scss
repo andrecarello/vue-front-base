@@ -1,0 +1,60 @@
+//
+// Author: André Carello <andrelino.cl@gmail.com>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: settings.scss
+// Location: scss/core
+//
+
+// criacao [ LOCAIS ]
+$fonts_location: "/assets/fonts/";
+$images_location: "../images/";
+$backgrounds_location: "#{$images_location}backgrounds/";
+$icons_location: "#{$images_location}icons/";
+
+// criacao [ PONTOS DE QUEBRA ]
+// min
+$breakpoints: ("xxs": 350px, "xs": 400px, "sm": 576px, "md": 768px, "lg": 992px, "xl": 1200px, "xxl": 1600px) !default;
+
+// criacao [ VARIAVEIS ]
+// [ VARIAVEIS > TAMANHO ]
+$browser-context: 16; // utilizada nas funcoes ( em, rem )
+$gutter: 10;
+$loop: 10;
+
+// [ VARIAVIES > ANIMACAO ]
+$timing: 0.15s;
+
+$ease: ease;
+$ease-out: cubic-bezier(0.91, 0.12, 0.86, 0.29);
+$fast-in: cubic-bezier(0, 0.96, 0, 0.89);
+$cubic-default: cubic-bezier(0.22, 0.55, 0.38, 0.84);
+
+$transitionDefault: all 0.2s ease;
+
+// cricao [ VARIAVEIS > SOMBRA ]
+$box-shadow: 4px 4px 10px rgba(#000, .16);
+$box-shadow-invert: -4px -4px 10px rgba(#000, .16);
+
+// criacao [ VARIAVEIS > CORES ]
+// social media colors
+$linkedin-color: #8d6cab;
+$facebook-color: #1d3469;
+$google-color: #dd4b39;
+$youtube-color: #cd201f;
+$instagram-color: #e95950;
+
+// project colors
+
+$default: #262730;
+$danger: #d33f49;
+$success: #4ea5d9;
+
+$colors: (
+       'default' $default,
+	   'danger' $danger,
+	   'success' $success
+);
+
+// create [ WEBFONTS ]
+$open_sans: "Open Sans";
