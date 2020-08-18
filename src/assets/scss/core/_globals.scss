@@ -7,8 +7,8 @@
 //
 
 :root {
-	@each $name, $color in $colors {
-		--#{$name}: #{$color};
+	@each $key, $value in $root {
+		--#{ $key }: #{ $value };
 	}
 	// --primary: #{$primary};
 	// --secondary: #{$secondary};
@@ -28,11 +28,23 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	@include font("Simplon");
+	@include font("Roboto");
 	position: relative;
 	height: 100%;
 }
 
 .hide {
 	display: none !important;
+}
+
+[view] {
+	background-color: var(--primary);
+	
+	min-height: 100vh;
+	max-width: 100vw;
+	width: 100%;
+	
+	overflow: hidden;
+	display: flex;
+	flex-flow: column;
 }

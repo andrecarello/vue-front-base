@@ -2,7 +2,7 @@
  Author: André Carello <andrelino.cl@gmail.com>
  Name: Vue Base
  Description: Code for Vue projects
- File: app.scss
+ File: core.scss
  Location: scss/
 */
 
@@ -13,12 +13,3 @@
 		"core/extends",
 		"core/globals",
 		"core/helpers";
-
-// -> load layout
-@import "layout/colors",
-		"layout/display",
-		"layout/form",
-		"layout/grid",
-		"layout/typography";
-
-// -> load components

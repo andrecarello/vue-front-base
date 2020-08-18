@@ -1,0 +1,54 @@
+//
+// Author: André Carello <andrelino.cl@gmail.com>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: form.scss
+// Location: scss/layout
+//
+
+.group {
+    position: relative;
+    margin: {
+        left: auto;
+        right: auto;
+        bottom: rem(15);
+    }
+
+    input, select {
+        display: block;
+        height: rem(50);
+        width: 100%;
+
+        border: rem(1) solid transparent;
+        border-radius: rem(5);
+        padding: {
+            top: rem(10);
+            left: rem(15);
+            right: rem(15);
+        };
+
+        font-size: rem(16);
+        color: var(--primary);
+    }
+
+    label {
+        position: absolute;
+        top: rem(2);
+        left: rem(10);
+        
+        font-size: rem(9);
+    } // -> label
+
+    &.inverse {
+
+        input{
+            background-color: var(--primary);
+            border-color: rgba(var(--rgb-light), 10%);
+            color: var(--text-light);
+        }
+
+        label {
+            color: var(--text-light);
+        }
+    }
+} // -> group

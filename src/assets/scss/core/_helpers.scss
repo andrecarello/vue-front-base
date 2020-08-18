@@ -28,3 +28,18 @@
 		}
 	}
 }
+
+// -> begin: display
+@mixin display($type, $v: '', $h: '') {
+	display: $type;
+
+	@if $type = 'flex' {
+		@if $v != '' {
+			justify-content: $v;
+		}
+		@if $h != '' {
+			align-items: $h;
+		}
+	}
+}
+// -> end: display

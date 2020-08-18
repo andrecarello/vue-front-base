@@ -11,12 +11,20 @@ const routes = [
 	{
 		path: '/',
 		name: 'Home',
-		component: HomeController.view()
+		component: HomeController.view(),
+		meta: {
+            KeepAlive: false, // Need to be cached
+            requiresAuth: true
+        }
 	},
 	{
 		path: '/auth',
 		name: 'Auth',
-		component: AuthController.view()
+		component: AuthController.view(),
+		meta: {
+            KeepAlive: false, // Need to be cached
+            requiresAuth: false
+        }
 	}
 ];
 
@@ -24,6 +32,23 @@ const router = new VueRouter({
 	mode: 'history',
 	base: process.env.BASE_URL,
 	routes
+});
+
+router.beforeEach((to, from, next) => {
+
+	const {
+		token
+	} = _.model('User')
+	
+	if (to.matched.some(record => record.meta.requiresAuth)) {
+		if ( !token ) {
+			next({ name: 'Auth' })
+		} else {
+			next()
+		}
+	} else {
+		next() // make sure to always call next()!
+	}
 });
 
 export default router;

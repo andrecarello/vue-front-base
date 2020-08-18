@@ -6,55 +6,53 @@
 // Location: scss/core
 //
 
-// criacao [ LOCAIS ]
-$fonts_location: "/assets/fonts/";
-$images_location: "../images/";
-$backgrounds_location: "#{$images_location}backgrounds/";
-$icons_location: "#{$images_location}icons/";
-
-// criacao [ PONTOS DE QUEBRA ]
-// min
-$breakpoints: ("xxs": 350px, "xs": 400px, "sm": 576px, "md": 768px, "lg": 992px, "xl": 1200px, "xxl": 1600px) !default;
-
-// criacao [ VARIAVEIS ]
-// [ VARIAVEIS > TAMANHO ]
+// -> global vars
 $browser-context: 16; // utilizada nas funcoes ( em, rem )
-$gutter: 10;
-$loop: 10;
+$gutter: 15px;
+$columns: 12;
 
-// [ VARIAVIES > ANIMACAO ]
-$timing: 0.15s;
+// -> project colors
+$primary: #050517;
+$secondary:#D81E5B;
+$text-light: #FBFBFF;
 
-$ease: ease;
-$ease-out: cubic-bezier(0.91, 0.12, 0.86, 0.29);
-$fast-in: cubic-bezier(0, 0.96, 0, 0.89);
-$cubic-default: cubic-bezier(0.22, 0.55, 0.38, 0.84);
 
-$transitionDefault: all 0.2s ease;
+// -> social media colors
+$linkedin-color: 	#8d6cab;
+$facebook-color: 	#1d3469;
+$google-color: 		#dd4b39;
+$youtube-color: 	#cd201f;
+$instagram-color: 	#e95950;
 
-// cricao [ VARIAVEIS > SOMBRA ]
-$box-shadow: 4px 4px 10px rgba(#000, .16);
-$box-shadow-invert: -4px -4px 10px rgba(#000, .16);
-
-// criacao [ VARIAVEIS > CORES ]
-// social media colors
-$linkedin-color: #8d6cab;
-$facebook-color: #1d3469;
-$google-color: #dd4b39;
-$youtube-color: #cd201f;
-$instagram-color: #e95950;
-
-// project colors
-
-$default: #262730;
-$danger: #d33f49;
-$success: #4ea5d9;
-
-$colors: (
-       'default' $default,
-	   'danger' $danger,
-	   'success' $success
+// -> project fonts
+$fonts: (
+  "Simplon Headline" simplonoi-headline 400,
+  "Simplon" simplonbp-light-webfont 300,
+  "Simplon" simplonbp-regular-webfont 400,
+  "Simplon" simplonbp-bold-webfont 600
 );
 
-// create [ WEBFONTS ]
-$open_sans: "Open Sans";
+// -> breakpoints
+$breakpoints: (
+  "xs": 400px,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1600px
+) !default;
+
+// -> paths
+$font-path: "/assets/fonts/";
+$images-path: "/assets/images/";
+$backgrounds-path: "#{ $images-path }backgrounds/";
+$icons-path: "#{ $images-path }icons/";
+
+
+// -> root vars
+$root: (
+	'primary' $primary,
+	'secondary' $secondary,
+  'text-light' $text-light,
+  'rgb-light'  '255,255,255' 
+);

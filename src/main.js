@@ -6,7 +6,9 @@ import Router from './router';
 import Store from './store';
 import Settings, { ANONYMOUS, INTERACTIONS } from './config/Settings';
 import { _CONTROLLER } from './bootstrap';
+import feather from 'vue-icon'
 
+// eslint-disable-next-line
 import './assets/scss/app.scss';
 
 Vue.config.productionTip = false;
@@ -29,6 +31,8 @@ if (INTERACTIONS) {
 
 // mock
 // import './mock/index';
+
+Vue.use(feather, 'v-icon')
 
 new Vue({
 	router: Router,

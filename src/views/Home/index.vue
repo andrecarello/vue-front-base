@@ -1,7 +1,9 @@
 <template>
   <div view="home">
     <HeadersAuth />
-	<container></container>
+	<container>
+    <p>{{ user.name }} {{user.lastName }}</p>
+  </container>
   </div>
 </template>
 

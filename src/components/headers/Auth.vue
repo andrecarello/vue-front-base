@@ -1,27 +1,33 @@
 <template>
-  <div class="header">
-    <OiIcon style="width: 50px; height: 50px" />
-    <h1>
-
+  <header class="header">
+    <v-icon name="paperclip" class="v-icon" style="width: 48px; height: 48px;"></v-icon>
+    <h1 v-if="!!title">
+      <small>{{ subtitle }}</small>
+      {{ title }}
     </h1>
-  </div>
+  </header>
 </template>
 <script>
-import OiIcon from "@/components/icons/Oi";
-
 export default {
   name: "HeadersAuth",
-  components: {
-    OiIcon,
+  props: {
+    title: {
+      type: String,
+      required: false
+    },
+    subtitle: {
+      type: String,
+      required: false
+    }
   },
 };
 </script>
 <style lang="scss" scoped>
-.header {
-	height: 162px;
-	background-color: var(--danger);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+  .v-icon {
+    fill: var(--secondary);
+
+    * {
+      fill: var(--secondary);
+    }
+  }
 </style>
