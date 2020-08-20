@@ -4,15 +4,14 @@ import Vue from 'vue';
 import App from './App.vue';
 import Router from './router';
 import Store from './store';
-import Settings, { ANONYMOUS, INTERACTIONS } from './config/Settings';
-import { _CONTROLLER } from './bootstrap';
-import feather from 'vue-icon'
 
-// eslint-disable-next-line
-import './assets/scss/app.scss';
-
+// -> begin: vue config
 Vue.config.productionTip = false;
+// -> end: vue config
 
+
+// -> begin: set controllers
+import { _CONTROLLER } from './bootstrap';
 _.controller = _CONTROLLER;
 _.controllers = [];
 
@@ -21,18 +20,37 @@ files.keys().map((key) => {
 	const name = key.split('/').pop().split('.')[0];
 	_.controllers.push(name);
 });
+// -> end: set controllers
 
+
+// -> begin: project exclusive imports
+import feather from 'vue-icon'
+import VueFormulate from '@braid/vue-formulate'
+// -> end: project exclusive imports
+
+
+// -> begin: styles
+// eslint-disable-next-line
+import './assets/scss/app.scss';
+// -> end: styles
+
+// -> begin: settings
+import Settings, { ANONYMOUS, INTERACTIONS } from './config/Settings';
 if (!localStorage.getItem(ANONYMOUS)) {
 	Settings.anonymous();
 }
 if (INTERACTIONS) {
 	Settings.interactions();
 }
+// -> end: settings
 
 // mock
-// import './mock/index';
+import './mock';
 
+// -> begin: uses
 Vue.use(feather, 'v-icon')
+Vue.use(VueFormulate)
+// -> end: uses
 
 new Vue({
 	router: Router,

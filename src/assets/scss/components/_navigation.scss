@@ -1,0 +1,16 @@
+.navigation{
+    display: flex;
+    align-items: center;
+    height: 70px;
+  
+    .brand{
+      @include circle(70);
+    }
+  
+    > a{
+      margin: {
+        left: calc(25px / 2);
+        right: calc(25px / 2)
+      };
+    }
+  }

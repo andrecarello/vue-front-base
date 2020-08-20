@@ -8,8 +8,9 @@
 
 // -> load core
 @import "core/settings",
-		"core/functions",
 		"core/mixins",
 		"core/extends",
 		"core/globals",
 		"core/helpers";
+
+@import "layout/display";

@@ -1,5 +1,6 @@
 export const defaultState = {
 	user: {},
+	users: [],
 	token: ''
 };
 
@@ -10,6 +11,7 @@ export default {
 
 	getters: {
 		user: state => state.user,
+		users: state => state.users,
 		token: state => state.token
 	},
 
@@ -19,6 +21,9 @@ export default {
 		},
 		saveUser({ commit }, value) {
 			commit('setUser', value)
+		},
+		saveUsers({ commit }, value) {
+			commit('setUsers', value)
 		},
 		saveToken({ commit }, value) {
 			commit('setToken', value)
@@ -33,6 +38,9 @@ export default {
 		},
 		setUser(state, value) {
 			state.user = value
+		},
+		setUsers(state, value) {
+			state.users = value
 		},
 		setToken(state, value) {
 			state.token = value

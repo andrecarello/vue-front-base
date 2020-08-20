@@ -1,38 +1,74 @@
-//
-// Author: André Carello <andrelino.cl@gmail.com>
-// Name: Vue Base
-// Description: Code for Vue projects
-// File: grid.scss
-// Location: scss/layout
-//
+// GRID SYSTEM
 
-.container {
-	width: 100%;
-	margin: 0 auto;
-
-	@each $breakpoint_name, $breakpoint_size in $breakpoints {
-		@include media( $breakpoint_name ) {
-			max-width: $breakpoint_size - (15px * 2);
-		}
-	}
-
-	&.fluid {
-		max-width: 100%;
-		width: 100%;
-	}
-}
-
-.grid {
-	display: flex;
-	justify-content: flex-start;
-	align-items: stretch;
-	flex-wrap: wrap;
-
-	@for $i from 1 through 12 {
-		&[columns="#{$i}"] {
-			> * {
-				width: (100% / $i);
-			}
-		}
-	}
-}
+.#{ $grid_container_name }{
+    width: 100%;
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  
+    @each $breakpoint_name, $breakpoint_size in $breakpoints {
+      @include media( $breakpoint_name ){
+        max-width: $breakpoint_size - ( $grid_gutter * 2 );
+      }
+    }
+  
+    &.fluid{
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  
+  .#{ $grid_row_name }{
+    margin: {
+      left: -$grid_gutter;
+      right: -$grid_gutter;
+    }
+  
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: wrap;
+  
+    [class*=#{ $grid_column_name }]{
+      position:       relative;
+      width:          100%;
+      min-height:     1px;
+      padding: {
+        left:         $grid_gutter;
+        right:        $grid_gutter;
+      }
+    }
+  }
+  
+  // grid columns
+  // { md }:{ class name }-{ size }
+  @mixin create_grid($breakpoint_name: "", $columns: $grid_columns){
+  
+    @for $i from 1 through $columns {
+  
+      $size: ( 100% / $columns * $i );
+      $class: "";
+  
+      @if $breakpoint_name != "" {
+        $class: ".#{ $breakpoint_name }\\\:#{ $grid_column_name }-#{ $i }"
+      } @else {
+        $class: ".#{ $grid_column_name }-#{ $i }"
+      }
+  
+      #{ $class } {
+        max-width: $size;
+        flex: 0 0 $size;
+      }
+    }
+  }
+  
+  @if $create-grid-component {
+    @include create_grid();
+  
+    @each $breakpoint_name, $breakpoint_size in $breakpoints {
+      @include media($breakpoint_name){
+        @include create_grid($breakpoint_name);
+      }
+    }
+  }

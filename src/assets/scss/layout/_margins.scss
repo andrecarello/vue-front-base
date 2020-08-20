@@ -1,0 +1,40 @@
+// BEGIN: CREATE MARGINS
+
+// margin usage
+//  { class name }{ direction }-{ distance }
+// mt-2
+// sm:mt-3
+// lg:mt-6
+@mixin create_margins($breakpoint_name: "", $direction: "", $step: $margin_steps, $loop: $margin_loop){
+
+    @for $i from 1 through $loop {
+  
+      $size: ( $step * $i );
+      $first-letter: str-slice($direction, 0, 1);
+      $class: "";
+  
+      @if $breakpoint_name != "" {
+        $class: ".#{ $breakpoint_name }\\\:#{ $margin_name }#{ $first-letter}-#{ $size }"
+      } @else {
+        $class: ".#{ $margin_name }#{ $first-letter }-#{ $size }"
+      }
+  
+      #{ $class } {
+        margin-#{ $direction }: #{ $size }px;
+      }
+    }
+  }
+  
+  @if $create-margin-helper {
+  
+    @each $direction in $margin_directions {
+      @include create_margins("", $direction);
+  
+      @each $breakpoint_name, $breakpoint_size in $breakpoints {
+        @include media($breakpoint_name){
+          @include create_margins($breakpoint_name, $direction);
+        }
+      }
+    }
+  
+  }

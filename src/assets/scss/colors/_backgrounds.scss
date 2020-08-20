@@ -1,0 +1,34 @@
+// BEGIN: CREATE BACKGROUND COLORS
+
+//  bgs usage
+//  { media query }:{ class name }-{ color }
+//  bg-gray-200
+//  sm:bg-gray-500
+//  lg:bg-gray-900
+@mixin create_bgs($breakpoint_name: "", $colors: $colors) {
+
+    @each $name, $color in $colors {
+      $class: "";
+  
+      @if $breakpoint_name != "" {
+        $class: ".#{ $breakpoint_name }\\\:#{ $bgs_name }-#{ $name }"
+      } @else {
+        $class: ".#{ $bgs_name }-#{ $name }"
+      }
+  
+      #{ $class } {
+        background-color: $color;
+      }
+    }
+  }
+  
+  
+  @if $create-bgs-helpers {
+    @include create_bgs();
+  
+    @each $breakpoint_name, $breakpoint_size in $breakpoints {
+      @include media($breakpoint_name){
+        @include create_bgs($breakpoint_name);
+      }
+    }
+  }

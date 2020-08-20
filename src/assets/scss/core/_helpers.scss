@@ -1,45 +1,38 @@
-//
-// Author: André Carello <andrelino.cl@gmail.com>
-// Name: Vue Base
-// Description: Code for Vue projects
-// File: helpers.scss
-// Location: scss/core
-//
 
-.cols {
-	&[size="2"] {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-		max-width: 320px;
-		width: 100%;
-		margin-left: auto;
-		margin-right: auto;
+// BEGIN: CREATE MARGIN
+@mixin create_margin($breakpoint_name, $direction, $step: $margin_steps, $loop: $margin_loop){
 
-		> * {
-			width: calc(100% / 2 - 17px);
-			margin-left: 0;
-			margin-right: 0;
-		}
-
-		img {
-			display: block;
-			width: 100%;
-		}
-	}
-}
-
-// -> begin: display
-@mixin display($type, $v: '', $h: '') {
-	display: $type;
-
-	@if $type = 'flex' {
-		@if $v != '' {
-			justify-content: $v;
-		}
-		@if $h != '' {
-			align-items: $h;
-		}
-	}
-}
-// -> end: display
+    @for $i from 1 through $loop {
+  
+      $size: ( $step * $i );
+      $first-letter: str-slice($direction, 0, 1);
+  
+      @if ( $breakpoint_name == 'xs' ) {
+        .m#{$first-letter}-#{$size}{
+          margin-#{$direction}: #{$size}px;
+        }
+      } @else {
+        .m#{$first-letter}-#{$breakpoint_name}-#{$size}{
+          margin-#{$direction}: #{$size}px;
+        }
+      }
+    }
+  }
+  
+  @if $create-margin-helper {
+  
+    @each $direction in $margin_directions {
+      @each $breakpoint_name, $breakpoint_size in $breakpoints {
+  
+        @if ( $breakpoint_name == 'xs' ) {
+          @include create_margin($breakpoint_name, $direction);
+        } @else {
+          @include media($breakpoint_name){
+            @include create_margin($breakpoint_name, $direction);
+          }
+        }
+      }
+    }
+  }
+  
+  // END: CREATE MARGIN

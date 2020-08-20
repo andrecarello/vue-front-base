@@ -14,7 +14,7 @@ const routes = [
 		component: HomeController.view(),
 		meta: {
             KeepAlive: false, // Need to be cached
-            requiresAuth: true
+            requiresAuth: false
         }
 	},
 	{

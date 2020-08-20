@@ -1,10 +1,13 @@
 <template>
   <div view="home">
-    <HeadersAuth />
-	<container>
-    <p>{{ user.name }} {{user.lastName }}</p>
-  </container>
-  </div>
+    <navbar :user="`${user.name} ${user.lastName}`" />
+  
+    <container>
+      <div v-for="user in users" :key="user.uuid">
+        <card :title="user.name">{{ user.uuid }}</card>
+      </div>
+    </container>
+  </div><!-- end: view[home] -->
 </template>
 
 <script src="./index.js"></script>

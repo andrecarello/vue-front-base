@@ -6,19 +6,28 @@
  Location: scss/
 */
 
-// -> load core
+
 @import "core/settings",
-		"core/functions",
 		"core/mixins",
-		"core/extends",
-		"core/globals",
-		"core/helpers";
+		"core/fonts",
+		"core/globals";
 
-// -> load layout
-@import "layout/colors",
-		"layout/display",
-		"layout/form",
+
+// -> import layout
+@import "layout/aligns",
 		"layout/grid",
-		"layout/typography";
+		"layout/display",
+		"layout/offset",
+		"layout/margins",
+		"layout/padding";
 
-// -> load components
+// -> import colors
+@import "colors/backgrounds",
+		"colors/text",
+		"colors/border";
+
+// -> import components
+@import "components/typography",
+		"components/navigation",
+		"components/tabs",
+		"components/badge";

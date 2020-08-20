@@ -1,0 +1,32 @@
+// BEGIN: CREATE TEXT ALIGNMENT
+
+//  text align usage
+//  { media query }:{ class name }-{ alignment }
+//  text-center
+//  sm:text-left
+//  lg:text-justify
+@mixin text-align($media: "") {
+    @each $align in $text_align_options {
+      $text: "";
+  
+      @if $media != "" {
+        $text: ".#{ $media }\\\:#{ $text_align_name }-#{ $align }";
+      } @else {
+        $text: ".#{ $text_align_name }-#{ $align }";
+      }
+  
+      #{ $text } {
+        text-align: $align;
+      }
+    }
+  }
+  
+  @if $create-text-align-helpers {
+    @include text-align();
+  
+    @each $breapoint_name, $breakpoint_size in $breakpoints {
+      @include media($breapoint_name) {
+        @include text-align($breapoint_name);
+      }
+    }
+  }

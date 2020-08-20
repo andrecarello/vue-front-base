@@ -1,0 +1,36 @@
+// BEGIN: CREATE OFFSET
+
+// offset usage
+//  { class name }-{ size } || { media }:{ class name }-{ size }
+// offset-2
+// sm:offset-3
+// lg:offset-6
+@mixin create_offset($breakpoint_name: "", $columns: $offset_spaces){
+
+    @for $i from 1 through $columns {
+  
+      $size: ( 100% / $columns * $i );
+      $class: "";
+  
+      @if $breakpoint_name != "" {
+        $class: ".#{ $breakpoint_name }\\\:#{ $offset_name }-#{ $i }"
+      } @else {
+        $class: ".#{ $offset_name }-#{ $i }"
+      }
+  
+      #{ $class } {
+        margin-left: $size;
+      }
+    }
+  }
+  
+  @if $create-offset-helper {
+  
+    @include create_offset();
+  
+    @each $breakpoint_name, $breakpoint_size in $breakpoints {
+      @include media($breakpoint_name){
+        @include create_offset($breakpoint_name);
+      }
+    }
+  }
