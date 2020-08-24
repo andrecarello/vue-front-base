@@ -1,0 +1,16 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/_components/headers/auth
+//
+
+$component: '.header-auth';
+
+#{$component} {
+	height: rem(167);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

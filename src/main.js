@@ -30,8 +30,7 @@ import VueFormulate from '@braid/vue-formulate'
 
 
 // -> begin: styles
-// eslint-disable-next-line
-import './assets/scss/app.scss';
+// import './assets/scss/app.scss';
 // -> end: styles
 
 // -> begin: settings

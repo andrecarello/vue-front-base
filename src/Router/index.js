@@ -14,7 +14,7 @@ const routes = [
 		component: HomeController.view(),
 		meta: {
             KeepAlive: false, // Need to be cached
-            requiresAuth: false
+            requiresAuth: true
         }
 	},
 	{
@@ -39,7 +39,7 @@ router.beforeEach((to, from, next) => {
 	const {
 		token
 	} = _.model('User')
-	
+
 	if (to.matched.some(record => record.meta.requiresAuth)) {
 		if ( !token ) {
 			next({ name: 'Auth' })

@@ -1,0 +1,12 @@
+/*
+ Author: André Carello <andrelino.cl@gmail.com>
+ Name: Vue Base
+ Description: Code for Vue projects
+ File: app.scss
+ Location: /
+*/
+
+@import "./styles/core/settings",
+				"./styles/core/mixins",
+				"./styles/core/fonts",
+				"./styles/core/globals";

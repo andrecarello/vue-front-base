@@ -1,0 +1,18 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: fonts.scss
+// Location: @/styles/core/fonts
+//
+
+@if $fonts {
+  @each $font, $font_name, $weight in $fonts {
+    @font-face {
+      font-family: "#{$font}";
+      src: url("/fonts/#{$font_name}.woff") format("woff");
+      font-weight: $weight;
+      font-style: normal;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: index.scss
+// Location: @/views/_components/headers/auth
+//
+
+// define [ language ]
+$lang: 'en';
+
+
+// define [ locations ]
+$fonts_location:        '../fonts/';
+$images_location:       '../images/';
+$backgrounds_location:  '#{$images_location}backgrounds/';
+
+
+// define [ browser options ]
+$browser-context: 16;
+
+
+// define [ suffix and preffix ]
+$prefix:    '';
+$suffix:    '';
+
+
+// define [ spaces ]
+$gutter: 20px;
+$margin: 20px;
+
+
+// define [ breapoints ]
+$breakpoints: (
+        sm  :   576px,
+        md  :   768px,
+        lg  :   992px,
+        xl  :   1200px
+) !default;
+
+
+// define [ animations and timing ]
+$ease: ease;
+$timing: .25s;
+
+
+// cria o array de fonts separados por espaco
+// ex: "Proxima Nova" ProximaNova-Regular 400,
+$fonts: (
+  "Simplon Headline" simplonoi-headline 400,
+  "Simplon" simplonbp-light-webfont 300,
+  "Simplon" simplonbp-regular-webfont 400,
+  "Simplon" simplonbp-bold-webfont 600
+);
+
+// create [ WEBFONTS ]
+$open_sans: "Open Sans";
