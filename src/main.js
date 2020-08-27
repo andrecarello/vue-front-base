@@ -3,7 +3,7 @@ window._ = require('lodash');
 import Vue from 'vue';
 import App from './App.vue';
 import Router from './Router';
-import Store from './store';
+import Store from './Store';
 
 // -> begin: vue config
 Vue.config.productionTip = false;
