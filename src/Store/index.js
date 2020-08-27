@@ -8,7 +8,7 @@ import VuexPersistence from 'vuex-persist';
 Vue.use(Vuex);
 
 // -> import helpers
-import { rename } from '../helpers/Misc';
+import { rename } from '@/Helpers/Misc';
 
 const STORAGE = new VuexPersistence({
 	storage: window.localStorage
