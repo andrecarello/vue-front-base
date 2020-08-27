@@ -1,4 +1,4 @@
-import { rename } from './helpers/Misc';
+import { rename } from './Helpers/Misc';
 
 export const _CONTROLLER = (_controllerName) => {
 	if (typeof _controllerName === 'string') {
