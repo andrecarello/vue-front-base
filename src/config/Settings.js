@@ -1,5 +1,5 @@
-import Anonymous from '../helpers/Anonymous';
-import Interactions from '../helpers/Interactions';
+import Anonymous from '../Helpers/Anonymous';
+import Interactions from '../Helpers/Interactions';
 
 export const PROJECT_NAME = '';
 export const CLIENT_NAME = '';
