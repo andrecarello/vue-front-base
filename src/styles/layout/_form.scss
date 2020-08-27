@@ -1,0 +1,62 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: form.scss
+// Location: @/styles/layout
+//
+
+.group {
+	position: relative;
+	border-radius: rem(4);
+	height: rem(56);
+	width: rem(264);
+	margin: 0 auto rem(15);
+
+	background-color: var(--white);
+
+	input,
+	select {
+		@include display(block);
+		max-width: rem(264);
+		width: 100%;
+		height: rem(56);
+		border: none;
+		border-bottom: rem(1) solid var(--grey);
+		
+		background: var(--white);
+		margin: 0 auto;
+		padding: 0 rem(15);
+		
+		font-size: rem(16);
+		text-align: left;
+		color: var(--dark-grey);
+		font-weight: 700;
+		
+		box-shadow: none !important;
+		-webkit-appearance: none;
+
+		@include placeholder {
+			color: var(--dark-grey);
+			font-weight: 500;
+			text-transform: uppercase;
+			@include font('Roboto');
+		}
+	}
+
+	.formulate-input-errors {
+		position: absolute;
+		bottom: rem(-7);
+		right: rem(5);
+
+		@include display(flex, center, center);
+
+		height: rem(15);
+		padding: rem(2) rem(5);
+		border-radius: rem(2);
+		background-color: var(--red);
+
+		color: var(--white);
+		font-size: rem(10);
+	}
+}

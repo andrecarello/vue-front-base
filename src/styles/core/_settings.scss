@@ -2,56 +2,100 @@
 // Author: OSTON <ti@oston.io>
 // Name: Vue Base
 // Description: Code for Vue projects
-// File: index.scss
-// Location: @/views/_components/headers/auth
+// File: settings.scss
+// Location: @/styles/core/
 //
 
 // define [ language ]
 $lang: 'en';
 
-
 // define [ locations ]
-$fonts_location:        '../fonts/';
-$images_location:       '../images/';
-$backgrounds_location:  '#{$images_location}backgrounds/';
-
+$fonts_location: '/assets/fonts/';
+$images_location: '/assets/images/';
+$backgrounds_location: '#{$images_location}backgrounds/';
 
 // define [ browser options ]
 $browser-context: 16;
-
+$box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.16);
 
 // define [ suffix and preffix ]
-$prefix:    '';
-$suffix:    '';
-
+$prefix: '';
+$suffix: '';
 
 // define [ spaces ]
 $gutter: 20px;
 $margin: 20px;
 
-
 // define [ breapoints ]
-$breakpoints: (
-        sm  :   576px,
-        md  :   768px,
-        lg  :   992px,
-        xl  :   1200px
-) !default;
-
+$breakpoints: (sm : 576px, md : 768px, lg : 992px, xl : 1200px) !default;
 
 // define [ animations and timing ]
 $ease: ease;
 $timing: .25s;
 
+// define [ colors ]
+$white:			#ffffff;
+$black:			#000000;
+$pure_yellow:    #FEC200;
+$orange:         #FE9713;
+$vivid_red:      #FF5A30;
+$light_magenta:  #FF3BFF;
+$green:          #2ED775;
+$blue:           #27C5D9;
+$grey:           #707070;
+$red:            #FE4848;
 
 // cria o array de fonts separados por espaco
 // ex: "Proxima Nova" ProximaNova-Regular 400,
 $fonts: (
-  "Simplon Headline" simplonoi-headline 400,
-  "Simplon" simplonbp-light-webfont 300,
-  "Simplon" simplonbp-regular-webfont 400,
-  "Simplon" simplonbp-bold-webfont 600
+	"Simplon Headline" simplonoi-headline 400,
+	"Simplon" simplonbp-light-webfont 300,
+	"Simplon" simplonbp-regular-webfont 400,
+	"Simplon" simplonbp-medium-webfont 500,
+	"Simplon" simplonbp-bold-webfont 600
 );
 
 // create [ WEBFONTS ]
-$open_sans: "Open Sans";
+$roboto: "Roboto";
+
+// list of colors
+$colors: (
+	'white' $white,
+	'grey' $grey,
+	'black' $black,
+	'pure-yellow' $pure_yellow,
+	'orange' $orange,
+	'red' $red,
+	'vivid-red' $vivid_red,
+	'light-magenta' $light_magenta,
+	'green' $green,
+	'blue' $blue,
+);
+
+$sizes: (
+	'xxxs' 9,
+	'xxs' 10,
+	'xs' 12,
+	'md' 15,
+	'lg' 20,
+	'xl' 26
+);
+
+$aligns: ( center, left, right, justify );
+
+$weights: (
+	'100' 100,
+	'200' 200,
+	'300' 300,
+	'400' 400,
+	'500' 500,
+	'600' 600,
+	'700' 600,
+	'800' 800,
+	'900' 900
+);
+
+
+$gutter_steps: 5;
+$gutter_loop: 10;
+$gutter_directions: ('top', 'left', 'right', 'bottom');

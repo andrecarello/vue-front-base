@@ -7,6 +7,15 @@
 */
 
 @import "./styles/core/settings",
-				"./styles/core/mixins",
-				"./styles/core/fonts",
-				"./styles/core/globals";
+		"./styles/core/mixins";
+
+
+@import "./styles/layout/colors",
+		"./styles/layout/globals",
+		"./styles/layout/spacing",
+		"./styles/layout/buttons",
+		"./styles/layout/fonts",
+		"./styles/layout/text",
+		"./styles/layout/form";
+
+

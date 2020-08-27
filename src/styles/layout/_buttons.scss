@@ -1,0 +1,44 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: colors.scss
+// Location: @/styles/colors
+//
+
+.button {
+	@include display(inline-block);
+	border-radius: rem(6);
+	position: relative;
+	margin: 0 rem(5);
+	padding: rem(12) rem(8);
+	border: rem(1) solid transparent;
+
+	color: var(--white);
+	font-size: rem(16);
+	font-weight: 400;
+	line-height: 1.4352;
+
+	cursor: pointer;
+
+	@include font('Roboto');
+
+	@each $name, $color in $colors {
+		&.#{$name} {
+			background-color: $color;
+			border-color: $color;
+
+			&.outline {
+				background-color: transparent;
+				color: #{$color}!important;
+			}
+		}
+	}
+
+	&.disabled {
+		opacity: 0.5;
+		touch-action: none;
+		pointer-events: none;
+		cursor: wait;
+	}
+}

@@ -55,6 +55,12 @@
   color: $color;
 }
 
+@mixin circle($x) {
+  height: #{$x}px;
+  width: #{$x}px;
+  border-radius: calc(#{$x}px / 2);
+}
+
 // LETRA D
 // LETRA E
 // LETRA F
@@ -86,20 +92,6 @@
 }
 // LETRA L
 // LETRA M
-@mixin _make-circle($x) {
-  height: #{$x}px;
-  width: #{$x}px;
-  border-radius: calc(#{$x}px / 2);
-}
-@mixin _make-size($x, $y: $x) {
-  height: #{$x}px;
-
-  @if $y != 'auto' {
-    width: #{$y}px;
-  } @else {
-    width: 100%;
-  }
-}
 
 /// @example
 ///   .selector {
@@ -224,6 +216,16 @@
         background-color: $track;
       }
     }
+  }
+}
+
+@mixin size($x, $y: $x) {
+  height: #{$x}px;
+
+  @if $y != 'auto' {
+    width: #{$y}px;
+  } @else {
+    width: 100%;
   }
 }
 

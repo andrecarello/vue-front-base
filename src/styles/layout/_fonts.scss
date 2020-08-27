@@ -10,7 +10,7 @@
   @each $font, $font_name, $weight in $fonts {
     @font-face {
       font-family: "#{$font}";
-      src: url("/fonts/#{$font_name}.woff") format("woff");
+      src: url("assets/fonts/#{$font_name}.woff") format("woff");
       font-weight: $weight;
       font-style: normal;
     }

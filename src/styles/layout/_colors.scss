@@ -1,0 +1,19 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: colors.scss
+// Location: @/styles/colors
+//
+
+:root {
+	@each $name, $color in $colors {
+		--#{$name}: #{$color};
+	}
+}
+
+@each $name, $color in $colors {
+	.text\:#{$name} {
+		color: #{$color}!important;
+	}
+}

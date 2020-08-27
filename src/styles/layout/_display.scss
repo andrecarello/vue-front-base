@@ -7,3 +7,20 @@
 //
 
 
+@mixin display($type, $horizontal: flex-start, $vertical: flex-start) {
+
+	display: $type;
+
+	@if $type = 'flex' {
+		justify-content: $horizontal;
+		align-items: $vertical;
+	}
+}
+
+@mixin grow($status) {
+	@if $status = true {
+		flex-grow: 1;
+	} @else {
+		flex-grow: 0;
+	}
+}

@@ -1,0 +1,33 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: spacing.scss
+// Location: @/styles/layout
+//
+
+// BEGIN: CREATE MARGINS
+// margin usage
+//  { class name }{ direction }-{ distance }
+// mt-2
+// sm:mt-3
+// lg:mt-6
+@mixin space($attr) {
+	@each $direction in $gutter_directions {
+
+		@for $i from 1 through $gutter_loop {
+
+			$size: ( $gutter_steps * $i );
+			$directionFirstLetter: str-slice($direction, 0, 1);
+			$attrFirstLetter: str-slice($attr, 0, 1);
+			$class: ".#{ $attrFirstLetter }#{ $directionFirstLetter }\\\:#{ $size }";
+
+			#{ $class } {
+				#{$attr}-#{ $direction }: #{ $size }px;
+			}
+		}
+	}
+}
+
+@include space('margin');
+@include space('padding');

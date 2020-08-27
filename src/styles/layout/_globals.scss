@@ -61,9 +61,14 @@ body {
 	width: 100%;
 	overflow-x: hidden;
 
-	@include font("Simplon");
+	@include font("Roboto");
 
 	* {
 		-webkit-overflow-scrolling: touch !important;
+	}
+
+	button {
+		background-color: transparent;
+		border: none;
 	}
 }

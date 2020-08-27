@@ -1,0 +1,25 @@
+//
+// Author: OSTON <ti@oston.io>
+// Name: Vue Base
+// Description: Code for Vue projects
+// File: text.scss
+// Location: @/styles/layout
+//
+
+@each $name, $size in $sizes {
+	.font\:#{$name} {
+		font-size: rem($size)!important;
+	}
+}
+
+@each $name, $weight in $weights {
+	.font\:#{$name} {
+		font-weight: $weight!important;
+	}
+}
+
+@each $align in $aligns {
+	.text\:#{$align} {
+		text-align: $align;
+	}
+}
