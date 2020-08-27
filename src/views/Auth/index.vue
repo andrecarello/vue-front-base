@@ -52,7 +52,7 @@
         error-behavior="submit"
       />
 
-      <div class="flex(center:center)">
+      <div class="md:flex(center:center)">
         <button
           type="submit"
           class="button blue text:white"

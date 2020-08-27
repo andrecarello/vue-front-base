@@ -11,8 +11,8 @@ export default {
 			msisdn: '',
 			pin: '',
 
-			msisdnForm: false,
-			pinForm: true,
+			msisdnForm: true,
+			pinForm: false,
 
 			// -> helpers
 			Masks: Masks,
