@@ -2,8 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 // -> import views
-import HomeController from '../controllers/HomeController';
-import AuthController from '../controllers/AuthController';
+import HomeController from '../Controllers/HomeController';
+import AuthController from '../Controllers/AuthController';
 
 Vue.use(VueRouter);
 
