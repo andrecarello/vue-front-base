@@ -1,8 +1,8 @@
 // @ is an alias to /src
 import LayoutContainer from '@/views/_Components/layout/Container/index.vue';
 
-import { Masks } from '@/helpers/Mask';
-import { isTestNumber } from "@/helpers/Misc";
+import { Masks } from '@/Helpers/Mask';
+import { isTestNumber } from "@/Helpers/Misc";
 
 export default {
 	name: 'Auth',
